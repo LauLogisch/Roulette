@@ -1,0 +1,32 @@
+package roulette;
+
+import java.util.Collection;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "roulette")
+public class GameRoulette {
+	private static GameRoulette instance = null;
+	private Map<Integer, Table> tables;
+	private AtomicInteger idTables;
+	
+	protected GameRoulette() {
+    	idTables = new AtomicInteger(2);
+    	
+    	tables = new ConcurrentHashMap<Integer, Table>();
+    	Table table1 = new Table(1, 0);
+    	table1.setId(1);
+    	tables.put(1, table1);    	
+    }
+	
+	public static GameRoulette getInstance() {
+	      if(instance == null) {
+	         instance = new GameRoulette();
+	      }
+	      return instance;
+	    }
+}
