@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+C:\School\Workspace\Roullete\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4118627951.index
+3461536706.index
+3854452623.index
+1670231599.index
+3513761605.index
