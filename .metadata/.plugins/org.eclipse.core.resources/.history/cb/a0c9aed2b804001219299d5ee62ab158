@@ -22,7 +22,7 @@ public class Table {
 	private Map<Integer, Player> players;
 	private AtomicInteger idPlayers;
 	
-	public Table() {
+	public Table(int minutes, int seconds) {
 		turntime = Calendar.getInstance();
 		players = new ConcurrentHashMap<Integer, Player>();
 		setTurn();

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import roulette.*;
 
 @Path("/tables")
@@ -14,7 +15,7 @@ public class TablesResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Table> getEmployees() {
 		List<Table> employees = new ArrayList<Table>();
-		employees.addAll(GameRoulette.getInstance().getTables());
+		employees.addAll(GameRoulette.getInstance().getTables()());
 		return employees;
 	}
 }
