@@ -1,7 +1,12 @@
 package roulette;
 
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -14,9 +19,12 @@ public class Table {
 	private int minutes = 1;
 	private int seconds = 0;
 	private final int min = 0, max = 36;
+	private Map<Integer, Player> players;
+	private AtomicInteger idPlayers;
 	
 	public Table() {
 		turntime = Calendar.getInstance();
+		players = new ConcurrentHashMap<Integer, Player>();
 		setTurn();
     }
 
@@ -70,4 +78,13 @@ public class Table {
 		
 	}
 	
+	@XmlElement
+	public Collection<Player> getPlayers() {
+		return players.values();
+	}
+	
+	public void addPlayer(Player player){
+		player.setId(idPlayers.incrementAndGet());
+    	this.players.put(player.getId(), player);
+    }
 }

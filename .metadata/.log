@@ -143,3 +143,22 @@ java.lang.NullPointerException
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2012-09-22 13:10:23.345
 !MESSAGE Failed to load properties file for project 'Roulette'
+!SESSION 2012-09-24 13:21:32.734 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_02
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2012-09-24 13:21:57.686
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2012-09-24 13:22:30.646
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2012-09-24 13:22:40.543
+!MESSAGE No valid Android XML Editor Delegate found for file /webservice/WebContent/WEB-INF/web.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-09-24 13:23:19.371
+!MESSAGE Failed to load properties file for project 'webservice'

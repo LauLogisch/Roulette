@@ -3,6 +3,8 @@ package roulette;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -10,9 +12,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class GameRoulette {
 	private static GameRoulette instance = null;
 	private Map<Integer, Table> tables;
-	private Map<String, Player> players;
+	private AtomicInteger idTables;
 	
-	protected GameRoulette() { 	
+	protected GameRoulette() {
+    	idTables = new AtomicInteger(2);
+    	
     	//Create 6 tables
     	tables = new ConcurrentHashMap<Integer, Table>();
     	Table table1 = new Table();
@@ -50,18 +54,5 @@ public class GameRoulette {
 	@XmlElement
 	public Collection<Table> getTables() {
 		return tables.values();
-	}
-	
-	@XmlElement
-	public Collection<Player> getPlayers() {
-		return players.values();
-	}
-	
-	public void addPlayer(Player player){
-    	this.players.put(player.getName(), player);
-    }
-	
-	public Player getPlayer(String name){
-		return this.players.get(name);
 	}
 }

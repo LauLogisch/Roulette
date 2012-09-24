@@ -12,9 +12,9 @@ public class TablesResource {
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Table> getTabels() {
-		List<Table> tables = new ArrayList<Table>();
-		tables.addAll(GameRoulette.getInstance().getTables());
-		return tables;
+	public List<Table> getEmployees() {
+		List<Table> employees = new ArrayList<Table>();
+		employees.addAll(GameRoulette.getInstance().getTables());
+		return employees;
 	}
 }
