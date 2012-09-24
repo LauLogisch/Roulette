@@ -1,7 +1,9 @@
 package roulette;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name = "player")
 public class Player {
 	private String name;
 	private String password;
@@ -20,12 +22,12 @@ public class Player {
 	}
 
 	@XmlElement
-	public String getWachtwoord() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setWachtwoord(String wachtwoord) {
-		this.password = wachtwoord;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	
