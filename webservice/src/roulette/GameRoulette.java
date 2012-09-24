@@ -1,5 +1,6 @@
 package roulette;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -10,9 +11,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class GameRoulette {
 	private static GameRoulette instance = null;
 	private Map<Integer, Table> tables;
-	private Map<String, Player> players;
+	private ArrayList<Player> players;
 	
 	protected GameRoulette() { 	
+		players = new ArrayList<Player>();
     	//Create 6 tables
     	tables = new ConcurrentHashMap<Integer, Table>();
     	Table table1 = new Table();
@@ -54,14 +56,24 @@ public class GameRoulette {
 	
 	@XmlElement
 	public Collection<Player> getPlayers() {
-		return players.values();
+		return players;
 	}
 	
-	public void addPlayer(Player player){
-    	this.players.put(player.getName(), player);
+	public void addPlayer(Player player){    	
+    	boolean found = false;
+    	for (Player p : this.players){
+    		System.out.println("player: "+ p + ", "+ p.getName() + ", " + p.getPassword());
+    		if (p.getName().equals(player.getName())) found = true;
+    	}
+    	if (found == false) this.players.add(player);
+    	System.out.println("--END--");  
     }
 	
 	public Player getPlayer(String name){
-		return this.players.get(name);
+		for (Player p : this.players){
+    		System.out.println("player: "+ p + ", "+ p.getName() + ", " + p.getPassword());
+    		if (p.getName().equals(name)) return p;
+    	}
+		return null;
 	}
 }

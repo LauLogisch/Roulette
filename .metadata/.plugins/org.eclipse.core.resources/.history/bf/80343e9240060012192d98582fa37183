@@ -1,0 +1,32 @@
+package roulette;
+
+import javax.xml.bind.annotation.XmlElement;
+
+public class Player {
+	private String name;
+	private String password;
+	
+	public Player(){		
+	}
+
+	
+	@XmlElement
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@XmlElement
+	public String getWachtwoord() {
+		return password;
+	}
+
+	public void setWachtwoord(String wachtwoord) {
+		this.password = wachtwoord;
+	}
+	
+	
+}

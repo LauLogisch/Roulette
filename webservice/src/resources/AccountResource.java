@@ -1,5 +1,6 @@
 package resources;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -14,9 +15,19 @@ import roulette.Player;
 public class AccountResource {
 	
 	@GET
+	@Path("{name}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Player getPlayer(@PathParam("name") String name) {
 		Player Player = GameRoulette.getInstance().getPlayer(name);
 		return Player;
+	}
+	
+	@POST	
+	@Consumes(MediaType.APPLICATION_XML)
+	public void createEmployees(Player player){
+		GameRoulette.getInstance().addPlayer(player);
+		
+		//return Response.created(URI.create("/account/" + player.getName()))
+		//		.build();
 	}
 }
