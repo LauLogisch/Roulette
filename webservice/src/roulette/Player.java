@@ -5,10 +5,13 @@ import javax.xml.bind.annotation.XmlElement;
 public class Player {
 	private String name;
 	private String password;
+	private int balance;
 	
-	public Player(){		
+	public Player(String name, String password){
+		this.name = name;
+		this.password = password;
+		balance = 1;
 	}
-
 	
 	@XmlElement
 	public String getName() {
@@ -26,6 +29,15 @@ public class Player {
 
 	public void setWachtwoord(String wachtwoord) {
 		this.password = wachtwoord;
+	}
+	
+	@XmlElement
+	public int getBalance() {
+		return balance;
+	}
+	
+	public void setBalance(int balance) {
+		this.balance = balance;
 	}
 	
 	

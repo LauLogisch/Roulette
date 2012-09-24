@@ -1,7 +1,9 @@
 package roulette;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -13,20 +15,28 @@ public class Table {
 	private Calendar turntime;
 	private int minutes = 1;
 	private int seconds = 0;
+	private ArrayList<String> curPlayers;
 	private final int min = 0, max = 36;
+	
 	
 	public Table() {
 		turntime = Calendar.getInstance();
 		setTurn();
+		curPlayers = new ArrayList<String>();
     }
-
-    @XmlAttribute
+	
+	@XmlAttribute
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	@XmlElement
+	public ArrayList<String> getPlayers() {
+		return curPlayers;
 	}
 
 	@XmlElement
@@ -66,8 +76,14 @@ public class Table {
 			Random random = new Random();
 			turn = random.nextInt(max - min + 1) + min;
 			turntime = Calendar.getInstance();
-		}
-		
+		}	
 	}
 	
+	public void removePlayer(String name) {
+		curPlayers.remove(name);
+	}
+	
+	public void addPlayer(String name) {
+		curPlayers.add(name);
+	}
 }
