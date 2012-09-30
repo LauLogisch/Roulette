@@ -1,5 +1,6 @@
 package resources;
 
+import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.ws.rs.DELETE;
@@ -26,12 +27,15 @@ public class TableResource {
 	@GET @Path("/turn")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String TakeTurn() {
-		return "Hallo Turn!";
+		return "Hello Turn!";
 	}
 	
 	@GET @Path("/players")
-	public void getPlayers() {
+	@Produces(MediaType.APPLICATION_JSON)
+	public ArrayList<String> getPlayers(@PathParam("tableid") int tableId) {
+		ConcurrentHashMap<Integer, Table> tables = (ConcurrentHashMap<Integer, Table>) GameRoulette.getInstance().getTables();
 		
+		return tables.get(tableId).getPlayers();
 	}
 	
 	@GET @Path("/bet")
@@ -45,7 +49,7 @@ public class TableResource {
 	}
 	
 	@GET @Path("player/{playerid}")
-	public void getPlayer() {
+	public void getPlayer(@PathParam("playerid") String playerId, @PathParam("tableid") int tableId) {
 		
 	}
 	

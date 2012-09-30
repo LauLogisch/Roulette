@@ -12,10 +12,11 @@ public class Player {
 	private String password;
 	private int balance;
 	
-	public Player(){
-		balance = 0;
+	public Player(String name, String password){
+		this.name = name;
+		this.password = password;
+		balance = 1;
 	}
-	
 	
 	@XmlAttribute
 	public int getId() {
