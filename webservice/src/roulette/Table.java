@@ -80,10 +80,18 @@ public class Table {
 	}
 	
 	public void removePlayer(String name) {
-		curPlayers.remove(name);
+		for (String p: curPlayers){
+			if (p.equalsIgnoreCase(name)) {
+				curPlayers.remove(name);
+			}
+		}		
 	}
 	
 	public void addPlayer(String name) {
-		curPlayers.add(name);
+		boolean found = false;
+		for (String p: curPlayers){
+			if (p.equalsIgnoreCase(name)) found = true;
+		}
+		if (found == false) curPlayers.add(name);
 	}
 }

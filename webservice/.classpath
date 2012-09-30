@@ -15,5 +15,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/asm-3.3.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jersey-bundle-1.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tom/Downloads/json-rpc-1.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -9,10 +9,8 @@ public class Player {
 	private String password;
 	private int balance;
 	
-	public Player(String name, String password){
-		this.name = name;
-		this.password = password;
-		balance = 1;
+	public Player(){
+		balance = 0;
 	}
 	
 	@XmlElement
