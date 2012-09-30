@@ -3,8 +3,11 @@ package roulette;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import com.sun.xml.internal.txw2.annotation.XmlAttribute;
+
 @XmlRootElement(name = "player")
 public class Player {
+	private int id;
 	private String name;
 	private String password;
 	private int balance;
@@ -13,6 +16,16 @@ public class Player {
 		balance = 0;
 	}
 	
+	
+	@XmlAttribute
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@XmlElement
 	public String getName() {
 		return name;

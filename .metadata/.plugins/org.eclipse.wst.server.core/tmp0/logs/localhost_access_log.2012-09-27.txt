@@ -1,0 +1,8 @@
+127.0.0.1 - - [27/Sep/2012:11:37:47 +0200] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [27/Sep/2012:11:37:48 +0200] "GET /webservice/WEB-INF/classes/resources/AccountResource.java HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [27/Sep/2012:11:37:48 +0200] "GET /favicon.ico HTTP/1.1" 404 973
+127.0.0.1 - - [27/Sep/2012:11:48:12 +0200] "POST /webservice/rest/account.jar HTTP/1.1" 404 967
+127.0.0.1 - - [27/Sep/2012:11:49:02 +0200] "POST /webservice/rest/account HTTP/1.1" 415 1092
+127.0.0.1 - - [27/Sep/2012:11:50:34 +0200] "POST /webservice/rest/account HTTP/1.1" 415 1092
+127.0.0.1 - - [27/Sep/2012:11:54:31 +0200] "POST /webservice/rest/account HTTP/1.1" 415 1092
+127.0.0.1 - - [27/Sep/2012:11:56:00 +0200] "POST /webservice/rest/account HTTP/1.1" 415 1092
