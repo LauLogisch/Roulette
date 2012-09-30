@@ -14,12 +14,11 @@ import roulette.Player;
 @Path("/account")
 public class AccountResource {
 	
-	@GET
-	@Path("{name}")
+	@GET	
 	@Produces(MediaType.APPLICATION_JSON)
-	public Player getPlayer(@PathParam("name") String name) {
-		Player Player = GameRoulette.getInstance().getPlayer(name);
-		return Player;
+	public int getPlayer(@PathParam("name") String name, @PathParam("password") String password) {
+		int playerid = GameRoulette.getInstance().getAccount(name, password);
+		return playerid;
 	}
 	
 	@POST	

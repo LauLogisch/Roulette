@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:id="@+id/txtGebruikersnaam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="173dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/lblGebruikersnaam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txtGebruikersnaam"
+        android:layout_alignLeft="@+id/txtGebruikersnaam"
+        android:layout_marginBottom="47dp"
+        android:text="Gebruikersnaam: "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/lblWachtwoord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtGebruikersnaam"
+        android:layout_below="@+id/txtGebruikersnaam"
+        android:layout_marginTop="50dp"
+        android:text="Wachtwoord:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/txtWachtwoord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblWachtwoord"
+        android:layout_alignRight="@+id/txtGebruikersnaam"
+        android:layout_below="@+id/lblWachtwoord"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtWachtwoord"
+        android:layout_alignRight="@+id/txtGebruikersnaam"
+        android:layout_below="@+id/txtWachtwoord"
+        android:layout_marginTop="29dp"
+        android:text="Login" />
+
+</RelativeLayout>
