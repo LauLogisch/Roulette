@@ -12,7 +12,7 @@ public class Player {
 	private String password;
 	private int balance;
 	
-	public Player(String name, String password){
+	public Player(){
 		this.name = name;
 		this.password = password;
 		balance = 1;

@@ -1,6 +1,5 @@
 package roulette;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,7 +20,9 @@ public class GameRoulette {
 		idPlayer = new AtomicInteger(1);
 		
 		//Create player
-		Player player1 = new Player("LauraSmit", "Bla");
+		Player player1 = new Player();
+		player1.setName("LauraSmit");
+		player1.setPassword("bla");
 		players.put(1, player1);
 		
     	//Create 6 tables

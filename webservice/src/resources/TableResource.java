@@ -15,6 +15,7 @@ import org.json.JSONObject;
 
 import roulette.GameRoulette;
 import roulette.Table;
+import roulette.Turn;
 
 @Path("/table/{tableId}")
 public class TableResource {
@@ -26,7 +27,7 @@ public class TableResource {
 	
 	@GET @Path("/turn")
 	@Produces(MediaType.TEXT_PLAIN)
-	public String TakeTurn() {
+	public String TakeTurn(@PathParam("tableid") int tableId) {
 		return "Hello Turn!";
 	}
 	
@@ -38,14 +39,17 @@ public class TableResource {
 		return tables.get(tableId).getPlayers();
 	}
 	
-	@GET @Path("/bet")
+	@POST @Path("/bet")
 	public void placeBet() {
 		
 	}
 	
 	@GET @Path("/bets")
-	public void getBets() {
+	public Turn getBets(@PathParam("tableid") int tableId) {
+		ConcurrentHashMap<Integer, Table> tables = (ConcurrentHashMap<Integer, Table>) GameRoulette.getInstance().getTables();
 		
+		Table table = tables.get(tableId);
+		return table.getLastTurn();
 	}
 	
 	@GET @Path("player/{playerid}")

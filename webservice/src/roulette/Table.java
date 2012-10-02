@@ -16,13 +16,14 @@ public class Table {
 	private int minutes = 1;
 	private int seconds = 0;
 	private ArrayList<String> curPlayers;
+	private ArrayList<Turn> turns;
 	private final int min = 0, max = 36;
-	
 	
 	public Table() {
 		turntime = Calendar.getInstance();
 		setTurn();
 		curPlayers = new ArrayList<String>();
+		turns = new ArrayList<Turn>();
     }
 	
 	@XmlAttribute
@@ -93,5 +94,22 @@ public class Table {
 			if (p.equalsIgnoreCase(name)) found = true;
 		}
 		if (found == false) curPlayers.add(name);
+	}
+	
+	public void addTurn() {
+		turns.add(new Turn());
+	}
+	
+	public void addBet(Player player, int amount, int number) {
+		Bet b = new Bet();
+		b.setPlayer(player);
+		b.setAmount(amount);
+		b.setNumber(number);
+	
+		getLastTurn().addBet(b);
+	}
+	
+	public Turn getLastTurn() {
+		return turns.get(turns.size() - 1);
 	}
 }
